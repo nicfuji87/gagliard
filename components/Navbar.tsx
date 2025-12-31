@@ -33,14 +33,14 @@ export const Navbar: React.FC = () => {
       for (const item of NAV_ITEMS) {
         const sectionId = item.href.substring(1);
         const section = document.getElementById(sectionId);
-        
+
         if (section) {
           const sectionTop = section.offsetTop;
           const sectionHeight = section.offsetHeight;
 
           if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
             setActiveSection(item.href);
-            break; 
+            break;
           }
         }
       }
@@ -49,7 +49,7 @@ export const Navbar: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     // Initial check
     handleScroll();
-    
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -60,13 +60,11 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center justify-between h-20">
             {/* Logo Area */}
             <div className="flex-shrink-0 flex items-center gap-3 z-50">
-              <img 
-                alt="Logotipo Judô Gagliard" 
-                className="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover border-2 border-primary/20" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxcscE9ivjPG6IPxcoERG7EOCNAaXds2-uDU0FHDP0tIdiCo-DX13jS6A5Kfh-edRnj-GEWIdfB7X0GZGOtl43MVRmclnSUECJ0oHZcZCQYDYtcpCyd46tfjLxqNpFED19pZYmcHB4EPuufASIEKoQhMQGK7s5bRGBO2O2OsBzTd5bTSzE7-VtfQZa0X1jwkjXMW--ySugnR6yDy4odb4Cjm4JV-FsGfIA3yGRmELZWpoWnpra00s9wB4N51BBoPQvUlzqEiXfJ-c"
-                onError={(e) => {
-                  e.currentTarget.src = 'https://picsum.photos/100/100';
-                }}
+              <img
+                alt="Logotipo Judô Gagliard"
+                className="h-10 w-10 md:h-12 md:w-12 rounded-full object-cover"
+                src="/logo.png"
+
               />
               <span className="font-display font-bold text-xl md:text-2xl tracking-wide uppercase text-text-light dark:text-text-dark">
                 Judô <span className="text-primary">Gagliard</span>
@@ -80,17 +78,15 @@ export const Navbar: React.FC = () => {
                   <a
                     key={item.label}
                     href={item.href}
-                    className={`relative transition-all duration-300 px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wider group ${
-                      activeSection === item.href 
-                        ? 'text-primary font-bold' 
-                        : 'text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary'
-                    }`}
+                    className={`relative transition-all duration-300 px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wider group ${activeSection === item.href
+                      ? 'text-primary font-bold'
+                      : 'text-text-light dark:text-text-dark hover:text-primary dark:hover:text-primary'
+                      }`}
                   >
                     {item.label}
                     {/* Animated Underline */}
-                    <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-primary transform transition-transform duration-300 origin-left ${
-                      activeSection === item.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
-                    }`}></span>
+                    <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-primary transform transition-transform duration-300 origin-left ${activeSection === item.href ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                      }`}></span>
                   </a>
                 ))}
                 <a
@@ -118,10 +114,9 @@ export const Navbar: React.FC = () => {
       </nav>
 
       {/* Mobile Menu Overlay */}
-      <div 
-        className={`fixed inset-0 z-40 bg-background-light dark:bg-background-dark lg:hidden transition-all duration-300 ease-in-out ${
-          isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'
-        }`}
+      <div
+        className={`fixed inset-0 z-40 bg-background-light dark:bg-background-dark lg:hidden transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'
+          }`}
       >
         <div className="flex flex-col h-full pt-28 px-6 pb-8 overflow-y-auto">
           <div className="space-y-2">
@@ -129,28 +124,25 @@ export const Navbar: React.FC = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className={`group flex items-center justify-between py-5 border-b border-gray-100 dark:border-gray-800 transition-colors ${
-                  activeSection === item.href ? 'border-l-4 border-l-primary pl-4' : ''
-                }`}
+                className={`group flex items-center justify-between py-5 border-b border-gray-100 dark:border-gray-800 transition-colors ${activeSection === item.href ? 'border-l-4 border-l-primary pl-4' : ''
+                  }`}
                 onClick={() => setIsOpen(false)}
                 style={{ transitionDelay: `${index * 50}ms` }}
               >
-                <span className={`text-2xl font-display font-bold transition-colors ${
-                  activeSection === item.href 
-                    ? 'text-primary' 
-                    : 'text-text-light dark:text-text-dark group-hover:text-primary'
-                }`}>
+                <span className={`text-2xl font-display font-bold transition-colors ${activeSection === item.href
+                  ? 'text-primary'
+                  : 'text-text-light dark:text-text-dark group-hover:text-primary'
+                  }`}>
                   {item.label}
                 </span>
-                <ChevronRight className={`h-6 w-6 transition-colors ${
-                   activeSection === item.href 
-                     ? 'text-primary' 
-                     : 'text-gray-300 dark:text-gray-600 group-hover:text-primary'
-                }`} />
+                <ChevronRight className={`h-6 w-6 transition-colors ${activeSection === item.href
+                  ? 'text-primary'
+                  : 'text-gray-300 dark:text-gray-600 group-hover:text-primary'
+                  }`} />
               </a>
             ))}
           </div>
-          
+
           <div className="mt-auto pt-8">
             <a
               href="#contato"

@@ -12,7 +12,7 @@ export const Hero: React.FC = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center w-full">
-        
+
         {/* Left Content */}
         <div className="w-full md:w-1/2 pt-8 md:pt-0 text-white flex flex-col items-center md:items-start text-center md:text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-6">
@@ -27,23 +27,16 @@ export const Hero: React.FC = () => {
           </h1>
 
           <p className="text-gray-300 text-base sm:text-lg md:text-xl mb-8 max-w-sm sm:max-w-lg font-light leading-relaxed">
-            Desenvolva seu corpo e mente com o Judô e Aikido. Aulas para todas as idades com mestres qualificados no coração de Brasília.
+            Desenvolva seu corpo e mente com o Judô. Aulas para todas as idades com mestres qualificados no coração de Brasília.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <a 
-              href="#contato" 
+            <a
+              href="#contato"
               className="flex items-center justify-center gap-2 bg-primary hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-wider transition-all shadow-lg shadow-red-600/40 hover:-translate-y-1 w-full sm:w-auto"
             >
               <Calendar className="h-5 w-5" />
               Aula Experimental
-            </a>
-            <a 
-              href="#sobre" 
-              className="flex items-center justify-center gap-2 bg-white/10 border-2 border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-wider transition-all backdrop-blur-sm w-full sm:w-auto"
-            >
-              Saiba Mais
-              <ArrowRight className="h-5 w-5" />
             </a>
           </div>
 
@@ -72,12 +65,12 @@ export const Hero: React.FC = () => {
 
           <div className="relative z-10 w-full max-w-sm md:max-w-lg px-6 md:px-0">
             <div className="absolute -inset-4 bg-primary/30 blur-3xl rounded-full"></div>
-            <img 
-              alt="Sensei Gagliard Peixoto" 
-              className="relative z-10 w-full h-auto rounded-2xl drop-shadow-2xl grayscale contrast-125 hover:grayscale-0 transition-all duration-700 object-cover aspect-[3/4]" 
+            <img
+              alt="Sensei Gagliard Peixoto"
+              className="relative z-10 w-full h-auto rounded-2xl drop-shadow-2xl grayscale contrast-125 hover:grayscale-0 transition-all duration-700 object-cover aspect-[3/4]"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsUKD8sP6eKHtVVKT4V9jtdZut5Im6ZDzRg6gaxg0LV4bF50qQrMPeUsySbtoQ4iIcS-d5P9aRr2Q9nP6-VCHPq10rphORHiymAhVY-a0P4UQ6WmliH40Xmajk6HBfg9v4INplCqlNWrECVvz_sbAlDk3EytbJUIk0a8QB3xDlOeSn1BvSSvjupUtnD-vtZMOE1kh67G_ATkxtEwvmPDJ-uqnq1INI2rX5ogvP5ARAIh04cyuC_vTZafXi2EvIdQRp-FuGu74AV_M"
             />
-            
+
             {/* Floating Badge */}
             <div className="absolute bottom-6 -left-2 md:bottom-10 md:-left-12 bg-card-light dark:bg-card-dark p-3 md:p-4 rounded-lg shadow-xl border border-gray-100 dark:border-gray-800 flex items-center gap-3 z-20 animate-bounce-slow max-w-[80%] md:max-w-none">
               <div className="bg-primary rounded-full p-2 flex-shrink-0">

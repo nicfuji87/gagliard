@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Expand } from 'lucide-react';
+import { Expand, ZoomIn } from 'lucide-react';
+import { ImageModal } from './ImageModal';
 
 const IMAGES = [
   {
@@ -43,15 +44,22 @@ const CATEGORIES = ['Todos', 'Competições', 'Treinos', 'Graduações', 'Kids']
 
 export const GallerySection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('Todos');
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImageTitle, setSelectedImageTitle] = useState<string>('');
 
-  const filteredImages = activeCategory === 'Todos' 
-    ? IMAGES 
+  const filteredImages = activeCategory === 'Todos'
+    ? IMAGES
     : IMAGES.filter(img => img.category === activeCategory);
+
+  const openModal = (src: string, title: string) => {
+    setSelectedImage(src);
+    setSelectedImageTitle(title);
+  };
 
   return (
     <section id="galeria" className="py-16 md:py-20 bg-background-light dark:bg-background-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Header */}
         <div className="text-center mb-8 md:mb-12">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark mb-4 uppercase">
@@ -66,11 +74,10 @@ export const GallerySection: React.FC = () => {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`flex-shrink-0 px-5 py-2 rounded-full text-sm font-medium transition-all shadow-sm whitespace-nowrap ${
-                activeCategory === cat
+              className={`flex-shrink-0 px-5 py-2 rounded-full text-sm font-medium transition-all shadow-sm whitespace-nowrap ${activeCategory === cat
                   ? 'bg-primary text-white shadow-lg ring-2 ring-primary ring-offset-2 ring-offset-background-light dark:ring-offset-background-dark'
                   : 'bg-white dark:bg-card-dark text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-zinc-800 border border-gray-200 dark:border-gray-700'
-              }`}
+                }`}
             >
               {cat}
             </button>
@@ -80,13 +87,20 @@ export const GallerySection: React.FC = () => {
         {/* Masonry/Grid */}
         <div className="columns-2 md:columns-2 lg:columns-3 gap-3 md:gap-6 space-y-3 md:space-y-6">
           {filteredImages.map((img, idx) => (
-            <div key={idx} className="break-inside-avoid group relative overflow-hidden rounded-lg md:rounded-xl shadow-md md:shadow-lg bg-white dark:bg-card-dark">
-              <img 
+            <div
+              key={idx}
+              onClick={() => openModal(img.src, img.title)}
+              className="break-inside-avoid group relative overflow-hidden rounded-lg md:rounded-xl shadow-md md:shadow-lg bg-white dark:bg-card-dark cursor-pointer"
+            >
+              <img
                 alt={img.title}
                 className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
                 src={img.src}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 md:p-6">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100 transform translate-y-4 group-hover:translate-y-0">
+                  <ZoomIn className="text-white h-8 w-8 drop-shadow-lg" />
+                </div>
                 <span className="text-primary font-bold text-[10px] md:text-sm uppercase tracking-wider mb-0.5 md:mb-1">{img.category}</span>
                 <h3 className="text-white font-display font-bold text-sm md:text-xl leading-tight">{img.title}</h3>
               </div>
@@ -102,6 +116,13 @@ export const GallerySection: React.FC = () => {
         </div>
 
       </div>
+
+      <ImageModal
+        isOpen={!!selectedImage}
+        onClose={() => setSelectedImage(null)}
+        imageUrl={selectedImage}
+        altText={selectedImageTitle}
+      />
     </section>
   );
 };
