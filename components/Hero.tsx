@@ -33,7 +33,9 @@ export const Hero: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <a
-              href="#contato"
+              href="https://wa.me/556181328873?text=Ol%C3%A1%2C%20estou%20no%20site%20e%20gostaria%20de%20agendar%20uma%20aula%20experimental."
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 bg-primary hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-wider transition-all shadow-lg shadow-red-600/40 hover:-translate-y-1 w-full sm:w-auto"
             >
               <Calendar className="h-5 w-5" />

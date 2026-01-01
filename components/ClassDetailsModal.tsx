@@ -118,7 +118,9 @@ export const ClassDetailsModal: React.FC<ClassDetailsModalProps> = ({ isOpen, on
 
                     <div className="mt-8 pt-6 border-t border-gray-100 dark:border-zinc-800">
                         <a
-                            href="#contato"
+                            href="https://wa.me/556181328873?text=Ol%C3%A1%2C%20estou%20no%20site%20e%20gostaria%20de%20agendar%20uma%20aula%20experimental."
+                            target="_blank"
+                            rel="noopener noreferrer"
                             onClick={onClose}
                             className="block w-full bg-primary hover:bg-red-700 text-white text-center py-3 rounded-xl font-bold uppercase tracking-wider shadow-lg shadow-red-500/20 active:scale-95 transition-all text-sm"
                         >

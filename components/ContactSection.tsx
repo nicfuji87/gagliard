@@ -6,7 +6,7 @@ export const ContactSection: React.FC = () => {
     <section id="contato" className="py-16 md:py-20 bg-background-light dark:bg-background-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16">
-          
+
           {/* Info Side */}
           <div className="space-y-8 order-2 lg:order-1">
             <div>
@@ -28,9 +28,9 @@ export const ContactSection: React.FC = () => {
             </div>
 
             <div className="pt-2 md:pt-6">
-              <a 
-                href="https://wa.me/5561981328873" 
-                target="_blank" 
+              <a
+                href="https://wa.me/556181328873?text=Ol%C3%A1%2C%20estou%20no%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-full sm:w-auto gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-wider transition-all shadow-lg hover:shadow-green-500/30"
               >
@@ -43,13 +43,13 @@ export const ContactSection: React.FC = () => {
           {/* Map Side */}
           <div className="bg-white dark:bg-card-dark rounded-2xl shadow-xl overflow-hidden border border-gray-100 dark:border-gray-800 order-1 lg:order-2 h-[300px] lg:h-auto">
             <div className="relative w-full h-full min-h-[300px] lg:min-h-[400px] bg-gray-200 dark:bg-gray-800 flex items-center justify-center group cursor-pointer">
-              <iframe 
+              <iframe
                 src="https://maps.google.com/maps?q=ACM%20Bras%C3%ADlia%20SGAS%20608&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                width="100%" 
-                height="100%" 
-                style={{border:0, position: 'absolute', inset: 0}} 
-                allowFullScreen={true} 
-                loading="lazy" 
+                width="100%"
+                height="100%"
+                style={{ border: 0, position: 'absolute', inset: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="grayscale hover:grayscale-0 transition-all duration-500"
                 title="Localização Judô Gagliard"
