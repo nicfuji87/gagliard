@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight, MapPin } from 'lucide-react';
 
 const NAV_ITEMS = [
   { label: 'Início', href: '#inicio' },
@@ -52,6 +52,22 @@ export const Navbar: React.FC = () => {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleMobileNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setIsOpen(false);
+
+    // Small timeout to allow the menu close animation/state update to process
+    // so overflow:hidden is removed before we try to scroll
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        // Optionally update URL hash without scrolling again
+        window.history.pushState(null, '', href);
+      }
+    }, 100);
+  };
 
   return (
     <>
@@ -126,7 +142,7 @@ export const Navbar: React.FC = () => {
                 href={item.href}
                 className={`group flex items-center justify-between py-5 border-b border-gray-100 dark:border-gray-800 transition-colors ${activeSection === item.href ? 'border-l-4 border-l-primary pl-4' : ''
                   }`}
-                onClick={() => setIsOpen(false)}
+                onClick={(e) => handleMobileNavClick(e, item.href)}
                 style={{ transitionDelay: `${index * 50}ms` }}
               >
                 <span className={`text-2xl font-display font-bold transition-colors ${activeSection === item.href
@@ -141,6 +157,23 @@ export const Navbar: React.FC = () => {
                   }`} />
               </a>
             ))}
+
+            {/* External Location Link */}
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=ACM+Brasilia+SGAS+608"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-between py-5 border-b border-gray-100 dark:border-gray-800 transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              <div className="flex items-center gap-3">
+                <MapPin className="h-6 w-6 text-primary" />
+                <span className="text-2xl font-display font-bold text-text-light dark:text-text-dark group-hover:text-primary transition-colors">
+                  Localização
+                </span>
+              </div>
+              <ChevronRight className="h-6 w-6 text-gray-300 dark:text-gray-600 group-hover:text-primary" />
+            </a>
           </div>
 
           <div className="mt-auto pt-8">
