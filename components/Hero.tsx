@@ -1,6 +1,7 @@
 import React from 'react';
 import { Calendar, CheckCircle } from 'lucide-react';
 import gagliardImg from '../assets/images/gagliard.jpg';
+import gagliardSquareImg from '../assets/images/gagliard1080x1080.jpg';
 
 export const Hero: React.FC = () => {
   return (
@@ -34,8 +35,8 @@ export const Hero: React.FC = () => {
             <div className="absolute -inset-4 bg-primary/30 blur-3xl rounded-full"></div>
             <img
               alt="Sensei Gagliard Peixoto"
-              className="relative z-10 w-full h-auto rounded-2xl drop-shadow-2xl grayscale contrast-125 transition-all object-cover aspect-[3/4] max-h-[35vh] mx-auto"
-              src={gagliardImg}
+              className="relative z-10 w-full h-auto rounded-2xl drop-shadow-2xl grayscale contrast-125 transition-all object-cover aspect-square max-h-[40vh] mx-auto"
+              src={gagliardSquareImg}
             />
             {/* Floating Badge Mobile on Image */}
             <div className="absolute bottom-4 -left-2 bg-card-light dark:bg-card-dark p-2 rounded-lg shadow-xl border border-gray-100 dark:border-gray-800 flex items-center gap-2 z-20 animate-bounce-slow max-w-[80%]">
@@ -82,7 +83,7 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Mobile CTA - Order 4 */}
-          <div className="md:hidden w-full px-4 mb-6 order-4">
+          <div className="md:hidden w-full px-4 mb-4 order-4">
             <a
               href="https://wa.me/556181328873?text=Ol%C3%A1%2C%20estou%20no%20site%20e%20gostaria%20de%20agendar%20uma%20aula%20experimental."
               target="_blank"
@@ -95,9 +96,9 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Mobile Badge - Order 5 (Bottom) */}
-          <div className="md:hidden inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-20 order-5">
+          <div className="md:hidden inline-flex items-center justify-center gap-2 px-6 py-2 rounded-full bg-black border border-white/20 shadow-lg mb-20 order-5 mx-auto">
             <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
-            <span className="text-[10px] font-bold tracking-wider uppercase">Matrículas Abertas</span>
+            <span className="text-[12px] font-bold tracking-wider uppercase text-white">Matrículas Abertas</span>
           </div>
 
         </div>
