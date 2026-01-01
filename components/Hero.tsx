@@ -4,7 +4,7 @@ import gagliardImg from '../assets/images/gagliard.jpg';
 
 export const Hero: React.FC = () => {
   return (
-    <section id="inicio" className="relative pt-20 overflow-hidden min-h-[90vh] md:min-h-screen flex items-center">
+    <section id="inicio" className="relative pt-24 pb-12 md:pt-20 md:pb-0 overflow-x-hidden min-h-[auto] md:min-h-screen flex items-center">
       {/* Backgrounds */}
       <div className="absolute inset-0 z-0">
         <div className="hero-pattern absolute inset-0 opacity-95 dark:opacity-100"></div>
@@ -15,23 +15,24 @@ export const Hero: React.FC = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center w-full">
 
         {/* Left Content */}
-        <div className="w-full md:w-1/2 pt-8 md:pt-0 text-white flex flex-col items-center md:items-start text-center md:text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-6">
+        <div className="w-full md:w-1/2 pt-4 md:pt-0 text-white flex flex-col items-center md:items-start text-center md:text-left">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-4 md:mb-6">
             <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
             <span className="text-xs font-bold tracking-wider uppercase">Matrículas Abertas</span>
           </div>
 
-          <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold leading-tight uppercase mb-6 max-w-lg md:max-w-none">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold leading-tight uppercase mb-4 md:mb-6 max-w-lg md:max-w-none">
             <span className="block text-white">Disciplina,</span>
             <span className="block text-primary">Respeito &</span>
             <span className="block text-white">Evolução</span>
           </h1>
 
-          <p className="text-gray-300 text-base sm:text-lg md:text-xl mb-8 max-w-sm sm:max-w-lg font-light leading-relaxed">
+          <p className="text-gray-300 text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-sm sm:max-w-lg font-light leading-relaxed">
             Desenvolva seu corpo e mente com o Judô. Aulas para todas as idades com mestres qualificados no coração de Brasília.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+          {/* Desktop CTA */}
+          <div className="hidden md:flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
             <a
               href="https://wa.me/556181328873?text=Ol%C3%A1%2C%20estou%20no%20site%20e%20gostaria%20de%20agendar%20uma%20aula%20experimental."
               target="_blank"
@@ -44,7 +45,7 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Mini Profile Card - Mobile Hidden or simplified */}
-          <div className="mt-12 p-4 bg-white/5 backdrop-blur-md border-l-4 border-primary rounded-r-lg max-w-md hidden md:block">
+          <div className="mt-8 md:mt-12 p-4 bg-white/5 backdrop-blur-md border-l-4 border-primary rounded-r-lg max-w-md hidden md:block">
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0">
                 <svg className="w-10 h-10 text-primary" viewBox="0 0 24 24" fill="currentColor">
@@ -59,14 +60,14 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Visual */}
-        <div className="w-full md:w-1/2 relative mt-12 md:mt-0 flex justify-center md:justify-end">
+        {/* Right Visual (Desktop) / Bottom Visual (Mobile) */}
+        <div className="w-full md:w-1/2 relative mt-8 md:mt-0 flex flex-col items-center md:items-end md:justify-end">
           {/* Decorative Kanji - Desktop Only */}
           <div className="absolute right-0 top-10 font-display font-bold text-[10rem] opacity-5 text-white pointer-events-none select-none hidden lg:block japanese-vertical leading-none">
             柔道
           </div>
 
-          <div className="relative z-10 w-full max-w-sm md:max-w-lg px-6 md:px-0">
+          <div className="relative z-10 w-full max-w-sm md:max-w-lg px-6 md:px-0 mb-8 md:mb-0">
             <div className="absolute -inset-4 bg-primary/30 blur-3xl rounded-full"></div>
             <img
               alt="Sensei Gagliard Peixoto"
@@ -85,6 +86,20 @@ export const Hero: React.FC = () => {
               </div>
             </div>
           </div>
+
+          {/* Mobile CTA - Below Image */}
+          <div className="md:hidden w-full px-4">
+            <a
+              href="https://wa.me/556181328873?text=Ol%C3%A1%2C%20estou%20no%20site%20e%20gostaria%20de%20agendar%20uma%20aula%20experimental."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-primary hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-wider transition-all shadow-lg shadow-red-600/40 active:scale-95 w-full"
+            >
+              <Calendar className="h-5 w-5" />
+              Aula Experimental
+            </a>
+          </div>
+
         </div>
 
       </div>
