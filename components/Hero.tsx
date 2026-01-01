@@ -1,5 +1,6 @@
 import React from 'react';
 import { Calendar, ArrowRight, CheckCircle } from 'lucide-react';
+import gagliardImg from '../assets/images/gagliard.jpg';
 
 export const Hero: React.FC = () => {
   return (
@@ -68,7 +69,7 @@ export const Hero: React.FC = () => {
             <img
               alt="Sensei Gagliard Peixoto"
               className="relative z-10 w-full h-auto rounded-2xl drop-shadow-2xl grayscale contrast-125 hover:grayscale-0 transition-all duration-700 object-cover aspect-[3/4]"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsUKD8sP6eKHtVVKT4V9jtdZut5Im6ZDzRg6gaxg0LV4bF50qQrMPeUsySbtoQ4iIcS-d5P9aRr2Q9nP6-VCHPq10rphORHiymAhVY-a0P4UQ6WmliH40Xmajk6HBfg9v4INplCqlNWrECVvz_sbAlDk3EytbJUIk0a8QB3xDlOeSn1BvSSvjupUtnD-vtZMOE1kh67G_ATkxtEwvmPDJ-uqnq1INI2rX5ogvP5ARAIh04cyuC_vTZafXi2EvIdQRp-FuGu74AV_M"
+              src={gagliardImg}
             />
 
             {/* Floating Badge */}

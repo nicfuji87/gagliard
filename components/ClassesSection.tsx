@@ -1,27 +1,30 @@
 import React, { useRef, useState } from 'react';
 import { User, Users, Trophy, Sparkles, ChevronRight, ArrowRight, ArrowLeft } from 'lucide-react';
 import { ClassDetailsModal, ClassData } from './ClassDetailsModal';
+import babyJudoImg from '../assets/images/4a7anos.jpg';
+import infantilJudoImg from '../assets/images/8a13anos.jpg';
+import adultoJudoImg from '../assets/images/adulto_competicao.jpg';
 
 const CLASSES: (ClassData & { icon: any })[] = [
   {
     title: 'Baby Judô',
-    age: '3 a 5 anos',
+    age: '4 a 7 anos',
     description: 'Introdução lúdica ao judô, focada no desenvolvimento motor, disciplina básica e socialização.',
     longDescription: 'O Baby Judô é projetado especificamente para a primeira infância. Através de brincadeiras e exercícios lúdicos, as crianças aprendem a conhecer seu próprio corpo, desenvolvem coordenação motora, equilíbrio e iniciam o aprendizado de valores como respeito e disciplina. Tudo em um ambiente seguro e acolhedor.',
     benefits: ['Desenvolvimento motor e coordenação', 'Socialização com outras crianças', 'Disciplina de forma divertida', 'Gasto de energia saudável'],
     schedule: ['Terça e Quinta: 08:00 - 09:00', 'Segunda e Quarta: 17:30 - 18:15'],
     icon: Sparkles,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCp1amdxXCgQoYgknLYNo3y_64dPHZBPku9Am-lkr8_zsG7bLR3GUI1jdpVm10E1kML-rZDusgTfGFeYoKDqISiN5izlRTSQvXEKyZH4Ft2NKt1ql_rsvMb0j2Qj9AQyKeD5ZuGtrT14jGea6aEntc3xjFxtk3mV1CYUYWVbKSJEgtr--zaI_eGRaJ_kcb52zJ8w3KzaAW-WHRtcBGAgKVXweVrJBhjVPFBYs60Hxu6LwgLNdh8Zk-7ZTZ5JZhoVlKH7gGKafCbFzo'
+    image: babyJudoImg
   },
   {
     title: 'Judô Infantil',
-    age: '6 a 12 anos',
+    age: '8 a 13 anos',
     description: 'Aprendizado técnico, fundamentos de queda, respeito ao próximo e autoconfiança.',
     longDescription: 'Nesta fase, o ensino técnico é aprofundado. As crianças aprendem os fundamentos do Judô (quedas, imobilizações e projeções) de forma estruturada. O foco vai além do tatame: buscamos formar cidadãos resilientes, respeitosos e autoconfiantes.',
     benefits: ['Melhora da concentração escolar', 'Defesa pessoal', 'Controle emocional', 'Fortalecimento físico'],
     schedule: ['Segunda e Quarta: 09:00 - 10:00', 'Terça e Quinta: 18:30 - 19:30'],
     icon: User,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA7k053GWCJymb-T5HrL8qqcIaiE3b3fzXBzy3-lDMXXogc3AY3JuQT7AXEiUX7guNJXqaJwYEpMkoEMCFanBaFxNzs1kPt2nsRfC6XyjKsnpCi4yU5t9kiQk8w8yYvmYPwBRX-cSCN_lykVkTaoxLefSZeJ944dYzlcFyNWPYB_hvB4DYisOwYHAUD4gRbnnUKRtGTGQFc9qpqLvXOU_liycFRmG1JZWhrIxgUEl5boAE8wro0bwn7y9GVjbCdJu6BVvZ_o0VINOE'
+    image: infantilJudoImg
   },
   {
     title: 'Adulto & Competição',
@@ -31,7 +34,7 @@ const CLASSES: (ClassData & { icon: any })[] = [
     benefits: ['Condicionamento físico completo', 'Alívio do estresse', 'Defesa pessoal real', 'Espírito de equipe e superação'],
     schedule: ['Segunda a Sexta: 19:30 - 21:00', 'Sábado: 09:00 - 11:00'],
     icon: Trophy,
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBAAQcKB3EPf9UvqkorMdHdQ1nfXi80eNCDUoBFAS973y97pQ0Y2LHEvl9eiLof4Yu6U_dvJTkPy23RVXlwbaxeINP0gAWJvdTxGQ0wH_t4xHvpKGWgZsa0s5ZoXWy5UrsZQSB7vdVqcJ7FHj-7oRHoQ4zxKg4neC150lMadhhVv7mKQ6KiaudQtil9ZHnlgitMcuzgu94kmuHzzQIeznZqHuODbE3KWVWODVOBkuLmtb7jhRB0-lwsxMQJby5pRlD4bBRqHnq_LI0'
+    image: adultoJudoImg
   },
 
 ];

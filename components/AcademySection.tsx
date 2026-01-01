@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Shield, Target, Award, ArrowRight, ZoomIn } from 'lucide-react';
 import { ScheduleModal } from './ScheduleModal';
 import { ImageModal } from './ImageModal';
+import dojo1Img from '../assets/images/dojo1.jpg';
+import dojo2Img from '../assets/images/dojo2.jpg';
 
 export const AcademySection: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -74,11 +76,11 @@ export const AcademySection: React.FC = () => {
             <div className="grid grid-cols-2 gap-3 md:gap-4">
               <div
                 className="relative group cursor-pointer overflow-hidden rounded-xl md:rounded-2xl shadow-lg transform translate-y-4 md:translate-y-8 h-40 md:h-64"
-                onClick={() => setSelectedImage('https://lh3.googleusercontent.com/aida-public/AB6AXuDaMegLtk9RdsOUXBgjVrQNz-l_v4-KYORrFqb76uwleL91yjxfIlKouhFtL1-T3iyhil2UqNrS6AaHITFRMxM-5gzjLz9Bz0SlLGdOhU06oTpHOH_NMg-DN0l_5a-hP44MXm8yVylx1TVs3c3XaAy2DSLDuv0ZVGHsFkp9ZTV6fYsqsRKWWby_2vxMVgHwsCaGgqhygZEV4c9p_QXuUGZEKnjrNN_9Nwrz44PeyPIkJEOsyoLlXi4Nyqt9jjl73Iba662T1V0whz0')}
+                onClick={() => setSelectedImage(dojo1Img)}
               >
                 <img
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaMegLtk9RdsOUXBgjVrQNz-l_v4-KYORrFqb76uwleL91yjxfIlKouhFtL1-T3iyhil2UqNrS6AaHITFRMxM-5gzjLz9Bz0SlLGdOhU06oTpHOH_NMg-DN0l_5a-hP44MXm8yVylx1TVs3c3XaAy2DSLDuv0ZVGHsFkp9ZTV6fYsqsRKWWby_2vxMVgHwsCaGgqhygZEV4c9p_QXuUGZEKnjrNN_9Nwrz44PeyPIkJEOsyoLlXi4Nyqt9jjl73Iba662T1V0whz0"
+                  src={dojo1Img}
                   alt="Interior do Dojo"
                 />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -88,11 +90,11 @@ export const AcademySection: React.FC = () => {
 
               <div
                 className="relative group cursor-pointer overflow-hidden rounded-xl md:rounded-2xl shadow-lg h-40 md:h-64"
-                onClick={() => setSelectedImage('https://lh3.googleusercontent.com/aida-public/AB6AXuD9hJz6pFb7ljFAipKz5msu2kD07YrdvjGUcAWSRK_UPB3X0PKOeaz-3KN9WMeEGhxHY3kLr-usDXV6kbYybg3eqJSFqOwPilq3X8wlfQ4VNEGy1B3rBdhq2HZERE72rdl38TaB_rb0cUkpX-aOymHobk7KkMmT0mHg9B4ogPV_wMzseGz4sKlzEj5Bxet6DHYBUEqlWFM8AXDIHRCmrZSHwN3gruIBSZqg5BWfvyQwmqIKb_tdhWhujadFP3ANEgFaU6sRSLjGUw4')}
+                onClick={() => setSelectedImage(dojo2Img)}
               >
                 <img
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9hJz6pFb7ljFAipKz5msu2kD07YrdvjGUcAWSRK_UPB3X0PKOeaz-3KN9WMeEGhxHY3kLr-usDXV6kbYybg3eqJSFqOwPilq3X8wlfQ4VNEGy1B3rBdhq2HZERE72rdl38TaB_rb0cUkpX-aOymHobk7KkMmT0mHg9B4ogPV_wMzseGz4sKlzEj5Bxet6DHYBUEqlWFM8AXDIHRCmrZSHwN3gruIBSZqg5BWfvyQwmqIKb_tdhWhujadFP3ANEgFaU6sRSLjGUw4"
+                  src={dojo2Img}
                   alt="Detalhe Tatame"
                 />
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">

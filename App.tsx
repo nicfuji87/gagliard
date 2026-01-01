@@ -1,31 +1,23 @@
 import React from 'react';
-import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { AcademySection } from './components/AcademySection';
-import { SenseiSection } from './components/SenseiSection';
-import { ClassesSection } from './components/ClassesSection';
-import { GallerySection } from './components/GallerySection';
-import { NewsSection } from './components/NewsSection';
-import { ContactSection } from './components/ContactSection';
-import { Footer } from './components/Footer';
-import { WhatsAppButton } from './components/WhatsAppButton';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './contexts/AuthContext';
+import HomePage from './pages/HomePage';
+import { NewsArchivePage } from './pages/NewsArchivePage';
+import { LoginPage } from './pages/LoginPage';
+import { AdminPage } from './pages/AdminPage';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen w-full overflow-x-hidden">
-      <Navbar />
-      <main>
-        <Hero />
-        <AcademySection />
-        <SenseiSection />
-        <ClassesSection />
-        <GallerySection />
-        <NewsSection />
-        <ContactSection />
-      </main>
-      <Footer />
-      <WhatsAppButton />
-    </div>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/noticias" element={<NewsArchivePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/admin" element={<AdminPage />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 };
 
