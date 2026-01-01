@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, ArrowRight, CheckCircle } from 'lucide-react';
+import { Calendar, CheckCircle } from 'lucide-react';
 import gagliardImg from '../assets/images/gagliard.jpg';
 
 export const Hero: React.FC = () => {
@@ -16,18 +16,40 @@ export const Hero: React.FC = () => {
 
         {/* Left Content */}
         <div className="w-full md:w-1/2 pt-2 md:pt-0 text-white flex flex-col items-center md:items-start text-center md:text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-3 md:mb-6">
+
+          {/* Badge Desktop Only */}
+          <div className="hidden md:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-6">
             <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
-            <span className="text-[10px] md:text-xs font-bold tracking-wider uppercase">Matrículas Abertas</span>
+            <span className="text-xs font-bold tracking-wider uppercase">Matrículas Abertas</span>
           </div>
 
-          <h1 className="font-display text-3xl sm:text-5xl md:text-7xl font-bold leading-tight uppercase mb-3 md:mb-6 max-w-lg md:max-w-none">
+          <h1 className="font-display text-3xl sm:text-5xl md:text-7xl font-bold leading-tight uppercase mb-4 md:mb-6 max-w-lg md:max-w-none order-1 md:order-none">
             <span className="block text-white">Disciplina,</span>
             <span className="block text-primary">Respeito &</span>
             <span className="block text-white">Evolução</span>
           </h1>
 
-          <p className="text-gray-300 text-sm sm:text-lg md:text-xl mb-4 md:mb-8 max-w-sm sm:max-w-lg font-light leading-relaxed">
+          {/* Mobile Image (Between Title and Text) */}
+          <div className="md:hidden w-full max-w-[85%] mb-4 order-2 relative">
+            <div className="absolute -inset-4 bg-primary/30 blur-3xl rounded-full"></div>
+            <img
+              alt="Sensei Gagliard Peixoto"
+              className="relative z-10 w-full h-auto rounded-2xl drop-shadow-2xl grayscale contrast-125 transition-all object-cover aspect-[3/4] max-h-[35vh] mx-auto"
+              src={gagliardImg}
+            />
+            {/* Floating Badge Mobile on Image */}
+            <div className="absolute bottom-4 -left-2 bg-card-light dark:bg-card-dark p-2 rounded-lg shadow-xl border border-gray-100 dark:border-gray-800 flex items-center gap-2 z-20 animate-bounce-slow max-w-[80%]">
+              <div className="bg-primary rounded-full p-1.5 flex-shrink-0">
+                <CheckCircle className="text-white h-3 w-3" />
+              </div>
+              <div>
+                <p className="text-[9px] text-gray-500 dark:text-gray-400 font-bold uppercase">Graduado pelo</p>
+                <p className="font-display text-xs font-bold text-text-light dark:text-text-dark leading-tight">Hombu Dojô</p>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-gray-300 text-sm sm:text-lg md:text-xl mb-6 md:mb-8 max-w-sm sm:max-w-lg font-light leading-relaxed order-3 md:order-none">
             Desenvolva seu corpo e mente com o Judô. Aulas para todas as idades com mestres qualificados no coração de Brasília.
           </p>
 
@@ -58,16 +80,36 @@ export const Hero: React.FC = () => {
               </div>
             </div>
           </div>
+
+          {/* Mobile CTA - Order 4 */}
+          <div className="md:hidden w-full px-4 mb-6 order-4">
+            <a
+              href="https://wa.me/556181328873?text=Ol%C3%A1%2C%20estou%20no%20site%20e%20gostaria%20de%20agendar%20uma%20aula%20experimental."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 bg-primary hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-wider transition-all shadow-lg shadow-red-600/40 active:scale-95 w-full"
+            >
+              <Calendar className="h-5 w-5" />
+              Aula Experimental
+            </a>
+          </div>
+
+          {/* Mobile Badge - Order 5 (Bottom) */}
+          <div className="md:hidden inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-20 order-5">
+            <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
+            <span className="text-[10px] font-bold tracking-wider uppercase">Matrículas Abertas</span>
+          </div>
+
         </div>
 
-        {/* Right Visual (Desktop) / Bottom Visual (Mobile) */}
-        <div className="w-full md:w-1/2 relative mt-4 md:mt-0 flex flex-col items-center md:items-end md:justify-end">
-          {/* Decorative Kanji - Desktop Only */}
-          <div className="absolute right-0 top-10 font-display font-bold text-[10rem] opacity-5 text-white pointer-events-none select-none hidden lg:block japanese-vertical leading-none">
+        {/* Right Visual (Desktop Only) */}
+        <div className="hidden md:flex w-full md:w-1/2 relative mt-4 md:mt-0 flex-col items-center md:items-end md:justify-end">
+          {/* Decorative Kanji */}
+          <div className="absolute right-0 top-10 font-display font-bold text-[10rem] opacity-5 text-white pointer-events-none select-none lg:block japanese-vertical leading-none">
             柔道
           </div>
 
-          <div className="relative z-10 w-full max-w-[85%] md:max-w-lg px-0 md:px-0 mb-6 md:mb-0">
+          <div className="relative z-10 w-full max-w-lg px-0 md:px-0 mb-0">
             <div className="absolute -inset-4 bg-primary/30 blur-3xl rounded-full"></div>
             <img
               alt="Sensei Gagliard Peixoto"
@@ -86,20 +128,6 @@ export const Hero: React.FC = () => {
               </div>
             </div>
           </div>
-
-          {/* Mobile CTA - Below Image */}
-          <div className="md:hidden w-full px-4 mb-24">
-            <a
-              href="https://wa.me/556181328873?text=Ol%C3%A1%2C%20estou%20no%20site%20e%20gostaria%20de%20agendar%20uma%20aula%20experimental."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-primary hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-wider transition-all shadow-lg shadow-red-600/40 active:scale-95 w-full"
-            >
-              <Calendar className="h-5 w-5" />
-              Aula Experimental
-            </a>
-          </div>
-
         </div>
 
       </div>
