@@ -81,7 +81,8 @@ export const SenseiSection: React.FC = () => {
           >
             {INSTRUCTORS.map((sensei, idx) => (
               <div key={idx} className="flex-shrink-0 w-[90vw] md:w-[900px] snap-center">
-                <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12 bg-gray-50 dark:bg-zinc-800/30 p-6 md:p-8 rounded-3xl border border-gray-100 dark:border-gray-800">
+                {/* Desktop Layout (Existing) */}
+                <div className="hidden md:flex flex-col lg:flex-row items-center gap-8 md:gap-12 bg-gray-50 dark:bg-zinc-800/30 p-6 md:p-8 rounded-3xl border border-gray-100 dark:border-gray-800">
 
                   {/* Image */}
                   <div className="w-full lg:w-2/5">
@@ -128,6 +129,55 @@ export const SenseiSection: React.FC = () => {
                     </div>
                   </div>
 
+                </div>
+
+                {/* Mobile Layout (New Overlay Style) */}
+                <div className="md:hidden relative w-full h-[65vh] rounded-2xl overflow-hidden shadow-xl border border-gray-200 dark:border-zinc-800">
+                  {/* Full Height Image */}
+                  <img
+                    alt={sensei.name}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    src={sensei.image}
+                  />
+
+                  {/* Gradient Overlay - Darker at bottom for text visibility */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+
+                  {/* Content Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col justify-end h-full">
+                    <div className="space-y-3">
+
+                      {/* Role & Name */}
+                      <div>
+                        <div className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-primary rounded-full text-[10px] font-bold uppercase text-white tracking-wider mb-2">
+                          {sensei.role}
+                        </div>
+                        <h2 className="font-display text-3xl font-bold text-white uppercase leading-none mb-1">
+                          {sensei.name}
+                        </h2>
+                        <p className="font-display text-sm text-primary font-bold uppercase tracking-widest">
+                          {sensei.rank}
+                        </p>
+                      </div>
+
+                      {/* Description */}
+                      <p className="text-gray-200 text-xs sm:text-sm leading-relaxed line-clamp-4">
+                        {sensei.description}
+                      </p>
+
+                      {/* Highlights */}
+                      <div className="flex flex-wrap gap-2 pt-2">
+                        {sensei.highlights.map((highlight, hIdx) => (
+                          <div key={hIdx} className="px-3 py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/10">
+                            <span className="text-[10px] font-bold text-white uppercase tracking-wider">
+                              {highlight}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
