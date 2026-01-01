@@ -174,7 +174,7 @@ export const NewsSection: React.FC = () => {
                 className="w-full py-4 px-4 bg-primary hover:bg-red-700 rounded-xl shadow-lg transition-all flex items-center justify-center gap-3 text-white font-bold text-lg group"
               >
                 <Archive className="h-5 w-5" />
-                <span>Ver arquivo completo</span>
+                <span>Ver outras notícias</span>
                 <span className="bg-white/20 px-2 py-0.5 rounded-full text-sm">{totalArticles}</span>
               </Link>
             )}

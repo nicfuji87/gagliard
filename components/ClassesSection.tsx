@@ -65,19 +65,14 @@ export const ClassesSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Mobile Swipe Indicator */}
-        <div className="flex md:hidden items-center justify-center gap-2 text-gray-500 text-sm mb-4 animate-pulse">
-          <ArrowLeft className="h-4 w-4" />
-          <span>Deslize para ver mais</span>
-          <ArrowRight className="h-4 w-4" />
-        </div>
+
 
         {/* Scroll Container */}
         <div className="relative group/container">
           {/* Desktop Nav Button Left */}
           <button
             onClick={() => scroll('left')}
-            className="hidden md:flex absolute left-0 top-1/2 -translate-x-4 -translate-y-1/2 z-20 bg-white dark:bg-zinc-800 p-3 rounded-full shadow-lg text-primary hover:bg-primary hover:text-white transition-all opacity-0 group-hover/container:opacity-100"
+            className="flex absolute left-2 md:left-0 top-1/2 -translate-y-1/2 md:-translate-x-4 z-30 bg-white/80 dark:bg-zinc-800/80 md:bg-white md:dark:bg-zinc-800 backdrop-blur-sm md:backdrop-blur-none p-3 rounded-full shadow-lg text-primary hover:bg-primary hover:text-white active:scale-95 transition-all opacity-100 md:opacity-0 md:group-hover/container:opacity-100"
             aria-label="Anterior"
           >
             <ArrowLeft className="h-6 w-6" />
@@ -124,7 +119,7 @@ export const ClassesSection: React.FC = () => {
           {/* Desktop Nav Button Right */}
           <button
             onClick={() => scroll('right')}
-            className="hidden md:flex absolute right-0 top-1/2 translate-x-4 -translate-y-1/2 z-20 bg-white dark:bg-zinc-800 p-3 rounded-full shadow-lg text-primary hover:bg-primary hover:text-white transition-all opacity-0 group-hover/container:opacity-100"
+            className="flex absolute right-2 md:right-0 top-1/2 -translate-y-1/2 md:translate-x-4 z-30 bg-white/80 dark:bg-zinc-800/80 md:bg-white md:dark:bg-zinc-800 backdrop-blur-sm md:backdrop-blur-none p-3 rounded-full shadow-lg text-primary hover:bg-primary hover:text-white active:scale-95 transition-all opacity-100 md:opacity-0 md:group-hover/container:opacity-100"
             aria-label="Próximo"
           >
             <ArrowRight className="h-6 w-6" />
