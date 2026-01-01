@@ -66,13 +66,7 @@ export const SenseiSection: React.FC = () => {
         <div className="relative group">
 
           {/* Left Arrow */}
-          <button
-            onClick={() => scroll('left')}
-            className="flex absolute left-2 md:left-0 top-1/2 -translate-y-1/2 md:-translate-x-4 lg:-translate-x-12 z-30 p-3 rounded-full bg-white/80 dark:bg-zinc-800/80 md:bg-white md:dark:bg-zinc-800 backdrop-blur-sm md:backdrop-blur-none shadow-lg border border-gray-100 dark:border-gray-700 text-primary hover:scale-110 active:scale-95 transition-all"
-            aria-label="Anterior"
-          >
-            <ArrowLeft className="h-6 w-6" />
-          </button>
+
 
           {/* Scroll Container */}
           <div

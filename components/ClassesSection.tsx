@@ -70,13 +70,7 @@ export const ClassesSection: React.FC = () => {
         {/* Scroll Container */}
         <div className="relative group/container">
           {/* Desktop Nav Button Left */}
-          <button
-            onClick={() => scroll('left')}
-            className="flex absolute left-2 md:left-0 top-1/2 -translate-y-1/2 md:-translate-x-4 z-30 bg-white/80 dark:bg-zinc-800/80 md:bg-white md:dark:bg-zinc-800 backdrop-blur-sm md:backdrop-blur-none p-3 rounded-full shadow-lg text-primary hover:bg-primary hover:text-white active:scale-95 transition-all opacity-100 md:opacity-0 md:group-hover/container:opacity-100"
-            aria-label="Anterior"
-          >
-            <ArrowLeft className="h-6 w-6" />
-          </button>
+
 
           <div
             ref={scrollRef}
