@@ -15,19 +15,19 @@ export const Hero: React.FC = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center w-full">
 
         {/* Left Content */}
-        <div className="w-full md:w-1/2 pt-4 md:pt-0 text-white flex flex-col items-center md:items-start text-center md:text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-4 md:mb-6">
+        <div className="w-full md:w-1/2 pt-2 md:pt-0 text-white flex flex-col items-center md:items-start text-center md:text-left">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-3 md:mb-6">
             <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
-            <span className="text-xs font-bold tracking-wider uppercase">Matrículas Abertas</span>
+            <span className="text-[10px] md:text-xs font-bold tracking-wider uppercase">Matrículas Abertas</span>
           </div>
 
-          <h1 className="font-display text-4xl sm:text-5xl md:text-7xl font-bold leading-tight uppercase mb-4 md:mb-6 max-w-lg md:max-w-none">
+          <h1 className="font-display text-3xl sm:text-5xl md:text-7xl font-bold leading-tight uppercase mb-3 md:mb-6 max-w-lg md:max-w-none">
             <span className="block text-white">Disciplina,</span>
             <span className="block text-primary">Respeito &</span>
             <span className="block text-white">Evolução</span>
           </h1>
 
-          <p className="text-gray-300 text-base sm:text-lg md:text-xl mb-6 md:mb-8 max-w-sm sm:max-w-lg font-light leading-relaxed">
+          <p className="text-gray-300 text-sm sm:text-lg md:text-xl mb-4 md:mb-8 max-w-sm sm:max-w-lg font-light leading-relaxed">
             Desenvolva seu corpo e mente com o Judô. Aulas para todas as idades com mestres qualificados no coração de Brasília.
           </p>
 
@@ -61,13 +61,13 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Right Visual (Desktop) / Bottom Visual (Mobile) */}
-        <div className="w-full md:w-1/2 relative mt-8 md:mt-0 flex flex-col items-center md:items-end md:justify-end">
+        <div className="w-full md:w-1/2 relative mt-4 md:mt-0 flex flex-col items-center md:items-end md:justify-end">
           {/* Decorative Kanji - Desktop Only */}
           <div className="absolute right-0 top-10 font-display font-bold text-[10rem] opacity-5 text-white pointer-events-none select-none hidden lg:block japanese-vertical leading-none">
             柔道
           </div>
 
-          <div className="relative z-10 w-full max-w-sm md:max-w-lg px-6 md:px-0 mb-8 md:mb-0">
+          <div className="relative z-10 w-full max-w-[85%] md:max-w-lg px-0 md:px-0 mb-6 md:mb-0">
             <div className="absolute -inset-4 bg-primary/30 blur-3xl rounded-full"></div>
             <img
               alt="Sensei Gagliard Peixoto"
@@ -88,7 +88,7 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Mobile CTA - Below Image */}
-          <div className="md:hidden w-full px-4">
+          <div className="md:hidden w-full px-4 mb-24">
             <a
               href="https://wa.me/556181328873?text=Ol%C3%A1%2C%20estou%20no%20site%20e%20gostaria%20de%20agendar%20uma%20aula%20experimental."
               target="_blank"
