@@ -27,15 +27,25 @@ export const ContactSection: React.FC = () => {
               </div>
             </div>
 
-            <div className="pt-2 md:pt-6">
+            <div className="pt-2 md:pt-6 flex flex-col sm:flex-row gap-4">
               <a
                 href="https://wa.me/556181328873?text=Ol%C3%A1%2C%20estou%20no%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-full sm:w-auto gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-wider transition-all shadow-lg hover:shadow-green-500/30"
+                className="flex items-center justify-center w-full sm:w-auto gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-bold uppercase tracking-wider transition-all shadow-lg hover:shadow-green-500/30 active:scale-95"
               >
                 <MessageCircle className="h-6 w-6" />
                 Falar no WhatsApp
+              </a>
+
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=ACM+Brasilia+SGAS+608"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-full sm:w-auto gap-2 border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-4 rounded-xl font-bold uppercase tracking-wider transition-all shadow-lg hover:shadow-red-600/20 active:scale-95 bg-transparent"
+              >
+                <MapPin className="h-6 w-6" />
+                Como Chegar
               </a>
             </div>
           </div>
